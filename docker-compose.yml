@@ -1,0 +1,12 @@
+services:
+  gallery-dl-api-server:
+    image: s0v3r1gn/gallery-dl-api-server:latest
+    environment:
+      - USER_ID=1000
+      - GROUP_ID=1000
+    restart: unless-stopped
+    volumes:
+      - ~/downloads:/app/gallery-dl
+      - ~/gallery-dl.conf:/app/gallery-dl.conf
+    ports:
+      - 5000:5000 #API Server Port
