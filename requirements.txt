@@ -1,8 +1,7 @@
-Flask
-flask_restful
-gallery-dl
-requests
-ffmpeg
-yt-dlp
-pysocks
-brotlicffi
+Flask==2.1.1
+flask-restful==0.3.10
+yt-dlp==2021.10.22 
+pysocks==1.7.1
+brotlicffi==1.0.9.2
+gallery-dl==1.19.3
+imageio-ffmpeg==0.4.5 

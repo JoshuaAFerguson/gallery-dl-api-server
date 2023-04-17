@@ -6,7 +6,8 @@ WORKDIR /app
 
 # Copy the Python script to the working directory
 COPY gallery-dl-api-server.py /app/
-COPY gallery-dl.conf /app/
+COPY gallery-dl.conf /etc/
+COPY config.json /app/
 
 # Install the required packages: Flask, flask-restful, and gallery-dl
 RUN pip install Flask flask_restful gallery-dl requests ffmpeg yt-dlp pysocks brotlicffi
