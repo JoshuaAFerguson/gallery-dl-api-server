@@ -225,6 +225,9 @@ class DownloadStats(Resource):
             conn = sqlite3.connect('gallery_dl_queue.db')
             c = conn.cursor()
 
+            c.execute("SELECT COUNT(*) FROM queue WHERE status='downloading'")
+            downloading_count = c.fetchone()[0]
+
             # Get the count of queued items
             c.execute("SELECT COUNT(*) FROM queue WHERE status='queued'")
             queued_count = c.fetchone()[0]
@@ -242,6 +245,7 @@ class DownloadStats(Resource):
 
             # Return the counts to the user
             return {
+                'downloading_count': downloading_count,
                 'queued_count': queued_count,
                 'completed_count': completed_count,
                 'failed_count': failed_count
