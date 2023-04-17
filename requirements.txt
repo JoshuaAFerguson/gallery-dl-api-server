@@ -1,0 +1,8 @@
+Flask
+flask_restful
+gallery-dl
+requests
+ffmpeg
+yt-dlp
+pysocks
+brotlicffi
